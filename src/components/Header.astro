@@ -1,0 +1,27 @@
+---
+const navItems = [
+  { href: "#hero", text: "Home" },
+  { href: "#about", text: "Tentang Kami" },
+  { href: "#features", text: "Fitur" },
+  { href: "#role-selection", text: "Bergabung" },
+  { href: "#contact", text: "Kontak" }
+];
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="#" class="text-3xl font-bold text-primary">HRhere.id</a>
+    <ul class="hidden md:flex space-x-8">
+      {navItems.map(item => (
+        <li>
+          <a 
+            href={item.href}
+            class="text-gray-700 font-medium hover:text-primary relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
