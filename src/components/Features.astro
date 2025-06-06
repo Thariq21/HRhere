@@ -1,0 +1,33 @@
+---
+const features = [
+  {
+    title: "AI Scanner Resume",
+    description: "Filter resume kandidat secara otomatis dan akurat sesuai kebutuhan pekerjaan."
+  },
+  {
+    title: "Psychology Test Online",
+    description: "Nilai karakter dan potensi pelamar dengan tes psikologi singkat sebelum wawancara."
+  },
+  {
+    title: "Analitik HR & Data Insights",
+    description: "Monitor berbagai metrik HR seperti turnover, engagement, dan produktivitas karyawan."
+  },
+  {
+    title: "Manajemen Gaji",
+    description: "Kelola data gaji karyawan dan proses pengajuan terkait dengan lebih efisien."
+  }
+];
+---
+<section id="features" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Fitur Unggulan Kami</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map(feature => (
+        <div class="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-semibold text-primary mb-3">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

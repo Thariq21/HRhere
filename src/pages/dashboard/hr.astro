@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard HR">
+  <div class="min-h-screen bg-gray-100">
+    <aside class="fixed w-64 h-full bg-gray-800 text-white">
+      <div class="p-6 text-center border-b border-gray-700">
+        <h2 class="text-2xl font-bold">HRhere.id</h2>
+      </div>
+      <nav class="mt-6">
+        <a href="#" class="block px-6 py-3 text-gray-300 hover:bg-primary hover:text-white">Dashboard</a>
+        <a href="#" class="block px-6 py-3 text-gray-300 hover:bg-primary hover:text-white">Lowongan</a>
+        <a href="#" class="block px-6 py-3 text-gray-300 hover:bg-primary hover:text-white">Pelamar</a>
+        <a href="#" class="block px-6 py-3 text-gray-300 hover:bg-primary hover:text-white">Karyawan</a>
+      </nav>
+    </aside>
+    
+    <main class="ml-64 p-8">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold">Manajemen Pelamar</h1>
+        <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Daftar Pelamar</h2>
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-2 text-left">Nama</th>
+              <th class="px-4 py-2 text-left">Posisi</th>
+              <th class="px-4 py-2 text-left">Status</th>
+              <th class="px-4 py-2 text-left">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="applicantsList">
+            <!-- Data will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<script>
+  // Check authentication
+  if (!sessionStorage.getItem('loggedInHREmail')) {
+    window.location.href = '/login/hr';
+  }
+
+  // Handle logout
+  document.getElementById('logoutBtn')?.addEventListener('click', () => {
+    sessionStorage.removeItem('loggedInHREmail');
+    window.location.href = '/login/hr';
+  });
+</script>

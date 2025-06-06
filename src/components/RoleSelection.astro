@@ -1,0 +1,39 @@
+---
+const roles = [
+  {
+    title: "Perusahaan (HR)",
+    description: "Optimalkan rekrutmen, kelola talenta, dan dapatkan insight berbasis data untuk pertumbuhan perusahaan Anda.",
+    loginUrl: "/login/hr",
+    signupUrl: "/signup/hr"
+  },
+  {
+    title: "Pencari Kerja (Pelamar)",
+    description: "Temukan pekerjaan impian, lamar dengan mudah, dan tunjukkan potensi terbaik Anda kepada perusahaan ternama.",
+    loginUrl: "/login/applicant",
+    signupUrl: "/signup/applicant"
+  }
+];
+---
+<section id="role-selection" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-primary after:transform after:-translate-x-1/2">
+      Bergabung Sebagai
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {roles.map(role => (
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:transform hover:-translate-y-2 transition-all">
+          <h3 class="text-2xl font-semibold text-primary mb-4">{role.title}</h3>
+          <p class="text-gray-600 mb-6">{role.description}</p>
+          <div class="space-y-3">
+            <a href={role.loginUrl} class="block w-full py-3 text-center bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+              Login
+            </a>
+            <a href={role.signupUrl} class="block w-full py-3 text-center border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              Daftar
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

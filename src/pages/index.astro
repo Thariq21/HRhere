@@ -1,23 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import RoleSelection from '../components/RoleSelection.astro';
+import Features from '../components/Features.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Solusi Digital HR & Karir Anda">
   <Header />
   <main>
-    <section id="hero" class="relative min-h-[85vh] flex items-center justify-center text-center text-white">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/75 to-primary-dark/85"></div>
-      <div class="container mx-auto px-4 relative z-10">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Platform Digital Terintegrasi untuk HR dan Pencari Kerja</h1>
-        <p class="text-xl mb-8 opacity-90">Permudah proses rekrutmen, temukan peluang karir terbaik, dan kelola talenta secara efisien bersama HRhere.id.</p>
-        <a href="#role-selection" class="inline-flex items-center px-8 py-4 text-lg font-semibold bg-white text-primary rounded-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1">
-          Mulai Sekarang
-          <span class="ml-2 transition-transform group-hover:translate-x-1">→</span>
-        </a>
-      </div>
-    </section>
-    
-    <!-- Additional sections will be added here -->
+    <Hero />
+    <About />
+    <RoleSelection />
+    <Features />
+    <Contact />
   </main>
+  <Footer />
 </Layout>
