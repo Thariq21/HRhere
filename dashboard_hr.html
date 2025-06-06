@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard HR - HRhere.id</title>
+    <link rel="stylesheet" href="dashboard_hr.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>HRhere.id</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active"><img src="icon-dashboard.svg" alt=""> Dashboard</a></li>
+                    <li><a href="#"><img src="icon-jobs.svg" alt=""> Lowongan</a></li>
+                    <li><a href="#"><img src="icon-applicants.svg" alt=""> Pelamar</a></li>
+                    <li><a href="#"><img src="icon-employees.svg" alt=""> Karyawan</a></li>
+                    <li><a href="#"><img src="icon-settings.svg" alt=""> Pengaturan</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Manajemen Pelamar</h1>
+                <div class="header-user">
+                    <div class="user-info">
+                        <strong>Admin HR</strong>
+                        <span>Perusahaan ABC</span>
+                    </div>
+                    <button id="logoutButton" class="btn-logout">Logout</button>
+                </div>
+            </header>
+
+            <div class="content-actions">
+                <div class="filter-group">
+                    <label for="filterJob">Filter berdasarkan Lowongan:</label>
+                    <select id="filterJob">
+                        <option value="semua">Semua Lowongan</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="UI/UX Designer">UI/UX Designer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Pelamar</th>
+                                <th>Jabatan Dilamar</th>
+                                <th>Tanggal Lamaran</th>
+                                <th>Skor AI (%)</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicantTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard_hr.js"></script>
+</body>
+</html>

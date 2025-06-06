@@ -1,0 +1,195 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007bff;
+    --primary-color-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --sidebar-bg: #212529;
+    --text-light: #f8f9fa;
+    --text-dark: #343a40;
+    --border-color: #dee2e6;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.sidebar-header {
+    padding: 24px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar-header h2 {
+    color: var(--white, #fff);
+    font-size: 1.8em;
+}
+.sidebar-nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #adb5bd;
+    text-decoration: none;
+    padding: 14px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background-color: var(--primary-color);
+    color: var(--white, #fff);
+    border-right: 4px solid var(--accent-color, #ffc107);
+}
+.sidebar-nav ul li a img {
+    width: 20px;
+    height: 20px;
+    filter: invert(70%) sepia(8%) saturate(301%) hue-rotate(174deg) brightness(96%) contrast(92%); /* Filter untuk ikon abu-abu */
+}
+.sidebar-nav ul li a:hover img,
+.sidebar-nav ul li a.active img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%); /* Filter untuk ikon putih */
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.main-header h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.user-info {
+    text-align: right;
+}
+.user-info strong {
+    display: block;
+}
+.user-info span {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+.btn-logout {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* --- Content Actions (Filter) --- */
+.content-actions {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+.filter-group label {
+    font-weight: 500;
+    margin-right: 10px;
+}
+.filter-group select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+}
+
+/* --- Table Container --- */
+.table-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Penting untuk border-radius pada tabel */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+thead th {
+    background-color: var(--light-bg);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+.status-high { background-color: var(--success-color); }
+.status-low { background-color: var(--warning-color); color: #333; }
+.status-rejected { background-color: var(--danger-color); }
+.status-hired { background-color: var(--primary-color); }
+.status-pending { background-color: var(--info-color); }
+
+.action-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.btn-view { background-color: var(--primary-color); }
+.btn-schedule { background-color: var(--info-color); }
+.btn-reject { background-color: var(--danger-color); }

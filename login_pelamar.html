@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Pelamar - HRhere.id</title>
+    <link rel="stylesheet" href="login_pelamar.css"> 
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>HRhere.id</h2>
+            <p>Login Pelamar</p>
+        </div>
+        <form id="loginPelamarForm"> 
+            <div class="input-group">
+                <label for="emailPelamar">Email</label>
+                <input type="email" id="emailPelamar" name="emailPelamar" placeholder="Masukkan email Anda" required>
+            </div>
+            <div class="input-group">
+                <label for="passwordPelamar">Password</label>
+                <input type="password" id="passwordPelamar" name="passwordPelamar" placeholder="Masukkan password Anda" required>
+            </div>
+            <div class="options">
+                <a href="#" class="forgot-password">Lupa Password?</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div class="register-link">
+                <p>Belum punya akun? <a href="signup_pelamar.html">Daftar di sini</a></p>
+            </div>
+        </form>
+        <div id="messagePelamar" class="message"></div>
+    </div>
+    <script src="login_pelamar.js"></script> 
+</body>
+</html>
