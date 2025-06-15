@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamar Pekerjaan - HRhere.id</title>
+    <link rel="stylesheet" href="upload_pelamar.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Lamar Pekerjaan!</h2>
+            <p>Silahkan isi dengan data yang sesuai.</p>
+        </div>
+        <div class="input-group">
+            <label for="companyName">Perusahaan Tujuan</label>
+            <input type="text" id="companyName" name="companyName" placeholder="Contoh: PT Teknologi Maju">
+        </div>
+        <form id="applicantForm">
+            <div class="input-group">
+                <label for="jobTitle">Jabatan yang Dilamar</label>
+                <select id="jobTitle" name="jobTitle" required>
+                    <option value="" disabled selected>Pilih Jabatan</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="UI/UX Designer">UI/UX Designer</option>
+                    <option value="Secretary">Secretary</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Customer Service">Customer Service</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="cv">Unggah CV Anda (Format: PDF)</label>
+                <input type="file" id="cv" name="cv" accept=".pdf" required>
+            </div>
+            <button type="submit" class="submit-btn">Kirim Lamaran</button>
+            <div id="applyMessage" class="message"></div>
+        </form>
+        <div class="back-link">
+            <a href="dashboard_pelamar.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </div>
+    <script src="upload_pelamar.js"></script>
+</body>
+</html>
